@@ -1,4 +1,4 @@
-class Sender(object):
+class Provider(object):
     def send_confirm_email_message(self, recipient, code):
         raise NotImplementedError()
 
