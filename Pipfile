@@ -8,7 +8,6 @@ verify_ssl = true
 [packages]
 rq = "==1.1.0"
 requests = "*"
-mandrill = "==1.0.59"
 
 [requires]
 python_version = "3.8"
