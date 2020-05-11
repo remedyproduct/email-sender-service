@@ -12,10 +12,8 @@ class MailgunProvider(Provider):
         self._mailgun_api_url = 'https://api.mailgun.net/v3'
         self._mailgun_endpoint = f'{self._mailgun_api_url}/{self._mailgun_api_domain}/messages'
 
-    def _send(self, template_name: str, recipient: str,
-                   subject: str, context: dict):
+    def _send(self, template_name: str, recipient: str, subject: str, context: dict):
         auth = ('api', self._mailgun_api_key)
-
         data = {
             'from': self._email_provider,
             'to': recipient,
@@ -24,9 +22,7 @@ class MailgunProvider(Provider):
             "h:X-Mailgun-Variables": json.dumps(context),
         }
 
-        requests.post(self._mailgun_endpoint,
-                      auth=auth,
-                      data=data)
+        requests.post(self._mailgun_endpoint, auth=auth, data=data)
 
     def send_confirm_email_message(self, recipient, code):
         template = "confirm_email"
